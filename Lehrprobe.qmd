@@ -1,0 +1,279 @@
+---
+title: "Unterrichtsgestaltung mit digitalen Medien"
+author: "Samuel Merk"
+format: 
+  revealjs:
+    title-slide-attributes:
+      data-background-image: img/sash.svg
+      data-background-size: 30%
+      data-background-position: 0 0
+    slide-number: true
+    controls: true
+    logo: https://drive.google.com/uc?export=view&id=1Eoy1slqV_DDgG50f3V6tc6QvFnhCBE1H
+    theme: [dark, css/custom.scss]
+    chalkboard:
+      theme: whiteboard
+      boardmarker-width: 3
+      buttons: true
+      chalk-effect: 0
+    fullscreen: true
+    pdfexport: true
+bibliography: references.bib
+csl: apa.csl
+editor_options: 
+  chunk_output_type: console
+---
+
+
+## Überblick {.center}
+
+```{r hidden chunk which creates template stuff}
+#| echo: false
+
+## in terminal ########
+# quarto install extension quarto-ext/fontawesome
+# quarto install extension schochastics/academicons
+#
+
+########################
+library(fontawesome)
+library(tidyverse)
+
+# Change css to lecker PH green
+if(!dir.exists("img"))
+dir.create("img")
+if(!dir.exists("css"))
+dir.create("css")
+fileConn<-file("css/custom.scss")
+writeLines(c("/*-- scss:defaults --*/",
+             "$link-color: #8cd000 !default;"), fileConn)
+close(fileConn)
+
+# create sash with URL
+sash <- 
+  ggplot() + 
+  geom_polygon(data = tibble(x = c(0,4,5.5,0),
+                             y = c(1,5,5,-.5)),
+               aes(x,y), fill = "#8cd000") + 
+  coord_fixed() +
+  annotate(geom = "text", 
+           label = " www.bit.ly/merk068", 
+           x = .8, y = .8, 
+           angle = 45,
+           hjust = 0, vjust = 0,
+           size = 10,
+           color = "white") +
+ theme_void() + 
+ theme(plot.margin = margin(-2,0,0,-12, unit = "cm"))
+ggsave("img/sash.svg", sash)
+```
+
+```{css}
+.imp {
+  color: #8cd000;
+}
+
+.em08{
+  font-size: .8em;
+}
+.em07{
+  font-size: .7em;
+}
+
+.reveal .slide img.r-stretch+p.caption {
+    font-size: 0.55em;
+    text-align: center;
+}
+
+.oncooblue{
+  color: #b3ecff;
+}
+
+.oncooyellow{
+  color: #e6e600;
+}
+
+.oncoogreen{
+  color: #00e600;
+}
+```
+
+. . .
+
+<center>
+
+<br> [{{< fa chalkboard-user >}}]{.imp} Was ist guter Unterricht?\
+<br>
+
+. . .
+
+<center>
+
+[{{< fa tablet-screen-button >}}]{.imp} Was ist guter digital gestützer Unterricht?\
+<br>
+
+. . .
+
+<center>[{{< fa list-check >}}]{.imp} Übung: SAMR Modell</center>
+
+::: footer
+Folien online unter www.bit.ly/merk068
+:::
+
+## <!-- Was ist guter Unterricht? --> {auto-animate="true"}
+
+::: {style="margin-top: 280px; font-size: 1.8em; font-weight: bold; color:#8cd000; margin-left: 110px;"}
+Was ist guter Unterricht? {{< fa chalkboard-user >}}
+:::
+
+::: footer
+Folien online unter www.bit.ly/merk068
+:::
+
+## <!-- Was ist guter Unterricht? --> {.smaller auto-animate="true"}
+
+::: {style="margin-top: 0px;font-size: 2.3em; font-weight: bold; color:#ffffff; margin-left: 0px;"}
+Was ist guter Unterricht? {{< fa chalkboard-user >}}
+:::
+
+<center>
+![Abbildung 1: Guter Unterricht nach Berliner [-@berliner2005]. Eigene Darstellung.](img/berliner02.png){fig.align="center" width=90%}
+</center>
+
+::: footer
+Folien online unter www.bit.ly/merk068
+:::
+
+## Unterrichtsqualität: Definition {.smaller}
+> »Unterrichtsqualität wird hier also verstanden als Gesamtheit der <span style="color:#D77D00;font-weight:bold">empirisch beobachtbaren Merkmale des Unterrichtsgeschehens</span>, die nachweislich mit der Entwicklung der Lernenden im Sinne der Realisierung von <span style="color:#8cd000;font-weight:bold">Bildungs- und Erziehungszielen</span> einhergehen.« [@klieme2019, S. 396]:  
+
+
+Im Kontext aktueller empirischer (insb. deutschsprachiger) Forschung <i class="fas fa-eye"></i> 
+
+* wird meistens die <span style="color:#8cd000;font-weight:bold">Leistungsentwicklung</span> als Kriterium fokussiert [@kunter2013b]
+* werden meistens sog. generische Tiefenstrukturen als Unterrichtsmerkmale betrachtet [@praetorius2018]
+    * <span style="color:#D77D00;font-weight:bold">Klassenführung</span> (classroom management)
+    * <span style="color:#D77D00;font-weight:bold">Konstruktive Unterstützung</span> (student support)
+    * <span style="color:#D77D00;font-weight:bold">Kognitive Aktivierung</span> (cognitive activation)
+
+
+::: {.notes}
+* positive Beziehung & wertschätzender Umgang
+* Ausrichtung auf „Verstehen“ und „schlussfolgerndes Denken“
+:::
+
+
+## Ihr Vorwissen aktivieren: Was ist guter Unterricht? {.smaller}
+
+Bitte notieren Sie in der Online-Kartenabfrage unter https://oncoo.de/ci3l
+
+* Beispiele für (Mini-)Unterrichtsszenen, in denen [Klassenführung]{.oncoogreen} (grüne Karten), [Kognitive Aktivierung]{.oncooyellow} (gelbe Karten) und [Konstruktive Unterstützung]{.oncooblue} (blaue Karten) hoch ausgeprägt sind
+    * Beispiel Klassenführung: [Lehrerin geht unmittelbar und nonverbal auf eine Störung ein]{.oncoogreen}
+    * Kognitive Aktivierung: [Mehrere Lösungswege werden besprochen]{.oncooyellow}
+    * Konstruktive Unterstützung: [Hervorhebung von Lernfortschritt]{.oncooblue}
+
+## {background-iframe="https://www.oncoo.de/t/ci3l" background-interactive="true"}    
+
+
+## <!-- Was ist guter digital gestützter Unterricht? --> {auto-animate="true"}
+
+::: {style="margin-top: 290px; font-size: 1.1em; font-weight: bold; color:#8cd000; margin-left: 110px;"}
+Was ist guter digital gestützter Unterricht? {{< fa tablet-screen-button >}}
+:::
+
+## <!-- Was ist guter digital gestützter Unterricht? --> {.smaller auto-animate="true"}
+
+::: {style="margin-top: 0px;font-size: 1.8em; font-weight: bold; color:#ffffff; margin-left: 0px;"}
+Was ist guter digital gestützter Unterricht? {{< fa tablet-screen-button >}}
+:::
+
+![Abbildung 2: Guter digital gestützter Unterricht](img/topologie.svg){fig.align="center" width=80%}
+
+## <!-- Das SAMR Modell --> {auto-animate="true"}
+
+::: {style="margin-top: 262px; font-size: 2.2em; font-weight: bold; color:#8cd000; margin-left: 110px;"}
+Das SAMR Modell {{< fa stairs >}}
+:::
+
+## <!-- Das SAMR Modell --> {.smaller auto-animate="true"}
+
+::: {style="margin-top: 0px;font-size: 2.3em; font-weight: bold; color:#ffffff; margin-left: 0px;"}
+Das SAMR Modell {{< fa stairs >}}
+:::
+Nach Puentedura [-@puentedura2006] lassen sich verschiedene Integrationsstufen von Technologie in Unterricht unterscheiden [@hamilton2016]:
+
+. . . 
+
+* Substitution
+* Augmentation
+* Modification
+* Redefinition
+
+. . . 
+
+## Substitution {.smaller}
+![Abbildung 3: Beispiel für Substitution (openochem.org)](img/mechanism.gif)
+
+> Faustregel: Substitionen sind tendenziell ungünstig, bestenfalls Nulleffekte [@delgado2018]
+
+
+
+## Augmentation {.smaller}
+<center>![Abbildung 4: Beispiel für Augmentation ](img/augmentation.png){width=53%}</center>
+<br>
+
+> Faustregel: Substantielle Effekte wenn a) Augmentation lehr- lerntheoretische Prinzipien adressiert und b) diese von den Lernenden auch wahrgenommen werden [@ploetzner2022].
+
+
+## Modification {.smaller}
+:::: {.columns}
+
+::: {.column width="50%"}
+![Abbildung 5 & 6: Beispiel für Modification](img/Inkreis_manuell.png){width=90%}
+:::
+
+::: {.column width="50%"}
+<iframe id="geogebraframe2" src="https://www.geogebra.org/material/iframe/id/tygqhnr4/width/500/height/350/border/888888/rc/false/ai/false/sdz/false/smb/false/stb/false/stbh/false/ld/false/sri/false" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" id="iframe_container" frameborder="0" ></iframe>
+</center>
+<style> #geogebraframe2 { height: 350px; width: 500px; margin-top: 0.0cm; border:0px;}
+</style> 
+:::
+
+::::
+
+> Faustregel: Dynamische Visualisierungen wirksam falls nicht rein »dekorativ« [@hoffler2007]
+
+
+## Redefinition {.smaller}
+<center>
+![Abbildung 7: Beispiel für Redefinition](img/schueleraustausch.jpg){width=53%}
+</center><br>
+
+> Faustregel: Redefinition $\nRightarrow$ High Tech, Redefinition $\Rightarrow$ Innovation, Redefintion $\nRightarrow$ Lernerfolg 
+
+
+## Fazit: Unterrichtsqualität & Technologieintegration {.smaller .center}
+* Die Technologieintegration stellt eher eine notwendige als eine hinreichende Bedingung für Unterrichtsqualität dar: 
+    * Während klar ist, dass von Substitution durch digitale Technologie kein Mehrwert erwartet werden kann, 
+    * kann gleichzeitig nicht von jedem Technolgieeinsatz höherer Integration (Augmentation, Modification, Redefinition) ein Vorteil erwartet werden.
+* Oftmals erlaubt jedoch die Technologieintegration das erleichterte Erreichen generischer oder fachdidaktischer Unterrichtsqualitätsmerkmale
+
+## Beispiel für Übung I: {.smaller}
+### [Einschätzung der Technologieintegration]{.imp} 
+Reziperen Sie das Unterrichtsvideo »Graphische Ableitung der Sinusfunktion« [{{< fa link-external >}}]{.imp} bis Minute 21. Welche Technologieintegrationsstufe würden Sie der Sequenz zwischen 14:15 und 18:15 warum zuweisen?
+
+![Abbildung 8: Übung in Form einer Videoannotation ](img/annotation_tum.jpg){width=50%}
+
+## Beispiel für Übung II: {.smaller}
+### [Peerfeedback zu Unterrichtsentwürfen]{.imp}  
+
+![Abbildung 9: Peerfeedback für Unterrichtsentwürfe in moodle (https://docs.moodle.org)](img/peerfeedback_moodle.jpg){width=80%}
+
+## <!-- Herzlichen Dank! --> {auto-animate="true"}
+
+::: {style="margin-top: 262px; font-size: 2.0em; font-weight: bold; color:#8cd000; margin-left: 110px;"}
+Herzlichen Dank für Ihre Aufmerksamkeit! {{< fa hands >}}
+:::
+
+
+## Literatur {.smaller}
