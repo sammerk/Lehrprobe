@@ -109,7 +109,7 @@ ggsave("img/sash.svg", sash)
 
 <center>
 
-[{{< fa tablet-screen-button >}}]{.imp} Was ist guter digital gestützer Unterricht?\
+[{{< fa tablet-screen-button >}}]{.imp} Was ist guter digital gestützter Unterricht?\
 <br>
 
 . . .
@@ -255,7 +255,7 @@ Nach Puentedura [-@puentedura2006] lassen sich verschiedene Integrationsstufen v
 ## Fazit: Unterrichtsqualität & Technologieintegration {.smaller .center}
 * Die Technologieintegration stellt eher eine notwendige als eine hinreichende Bedingung für Unterrichtsqualität dar: 
     * Während klar ist, dass von Substitution durch digitale Technologie kein Mehrwert erwartet werden kann, 
-    * kann gleichzeitig nicht von jedem Technolgieeinsatz höherer Integration (Augmentation, Modification, Redefinition) ein Vorteil erwartet werden.
+    * kann gleichzeitig nicht von jedem Technologieeinsatz höherer Integration (Augmentation, Modification, Redefinition) ein Vorteil erwartet werden.
 * Oftmals erlaubt jedoch die Technologieintegration das erleichterte Erreichen generischer oder fachdidaktischer Unterrichtsqualitätsmerkmale
 
 ## Beispiel für Übung I: {.smaller}
