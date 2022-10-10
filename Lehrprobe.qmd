@@ -9,7 +9,7 @@ format:
       data-background-position: 0 0
     slide-number: true
     controls: true
-    logo: https://drive.google.com/uc?export=view&id=1Eoy1slqV_DDgG50f3V6tc6QvFnhCBE1H
+    logo: img/PHlogo.svg
     theme: [dark, css/custom.scss]
     chalkboard:
       theme: whiteboard
