@@ -114,7 +114,7 @@ ggsave("img/sash.svg", sash)
 
 . . .
 
-<center>[{{< fa list-check >}}]{.imp} Übung: SAMR Modell</center>
+<center>[{{< fa list-check >}}]{.imp} Übung: Technologieintegration und Unterrichtsqualität</center>
 
 ::: footer
 Folien online unter www.bit.ly/merk068
